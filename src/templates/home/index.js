@@ -1,12 +1,39 @@
+// @vendors
 import React, { useState } from "react";
+import CreateForm from "../../components/create";
+import LoginForm from "../../components/login";
+
+// @layouts
+import LayoutGeneric from "../../layout/generic";
+
+// @images
+const BgLogin = require('../../assets/images/drive.jpg')
 
 export default function Home() {
-    const [changeName, setChangeName] = useState(false)
+    const [loginForm, setLoginForm] = useState(false)
     return (
-        <div>
-            Hola {changeName ? 'Nataly' : 'Estiven'}!
-
-            <button onClick={() => setChangeName(!changeName)}>Cambiar nombre</button>
-        </div>
+        <LayoutGeneric>
+            <div className="layout-side">
+                <header className="layout-side-header">
+                    header
+                </header>
+                {loginForm && (
+                    <LoginForm
+                        setLoginForm={() => setLoginForm(false)}
+                    />
+                )}
+                {!loginForm && (
+                    <CreateForm
+                        setLoginForm={() => setLoginForm(true)}
+                    />
+                )}
+            </div>
+            <div className="layout-image">
+                <img
+                    src={BgLogin}
+                    alt='Persona conduciendo'
+                />
+            </div>
+        </LayoutGeneric>
     )
 }

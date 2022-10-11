@@ -1,18 +1,11 @@
 // @vendors 
-import React, { Fragment, lazy, Suspense } from 'react';
-import {
-  Route,
-  Switch,
-  BrowserRouter
-} from 'react-router-dom';
-import { Button } from 'reactstrap';
+import React from 'react';
 
 // @templates
 import Home from './templates/home';
 
 // @styles 
 import './App.scss';
-
 
 function App() {
   return (
