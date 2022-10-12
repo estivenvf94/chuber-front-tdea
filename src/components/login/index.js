@@ -5,7 +5,7 @@ export default function LoginForm({ setLoginForm }) {
     return (
         <div className="layout-side-form">
             <div className="title">
-                Ingresa a tu cuenta holas
+                Ingresa a tu cuenta 
             </div>
             <div className="parag">
                 ¿No tienes una cuenta?
