@@ -1,11 +1,15 @@
+// @vendors
 import React, { useState } from "react";
-import { Form, Button, FormGroup, Input, Label, Col, Row } from "reactstrap";
+import { Form, Button, FormGroup, ButtonGroup, Input, Label, Col, Row } from "reactstrap";
+
+// @components
 import RequestForm from "../request";
 
 export default function CreateForm({ setLoginForm }) {
     const [showRequest, setShowRequest] = useState(false)
+    const [rSelected, setRSelected] = useState(1);
 
-    if(showRequest){
+    if (showRequest) {
         return <RequestForm />
     }
 
@@ -26,6 +30,28 @@ export default function CreateForm({ setLoginForm }) {
             <Form
                 className="form"
             >
+                {/* <FormGroup>
+                    <ButtonGroup>
+                        <Button
+                            color="primary"
+                            outline
+                            active={rSelected === 1}
+                            onClick={() => setRSelected(1)}
+                        >
+                            <em className="fal fa-user" />
+                            Persona
+                        </Button>
+                        <Button
+                            color="primary"
+                            outline
+                            active={rSelected === 2}
+                            onClick={() => setRSelected(2)}
+                        >
+                            <em className="fal fa-car" />
+                            Conductor
+                        </Button>
+                    </ButtonGroup>
+                </FormGroup> */}
                 <Row>
                     <Col md={6}>
                         <FormGroup>
@@ -41,12 +67,12 @@ export default function CreateForm({ setLoginForm }) {
                     </Col>
                     <Col md={6}>
                         <FormGroup>
-                            <Label for="name">
+                            <Label for="placa">
                                 Placa del vehículo
                             </Label>
                             <Input
-                                id="name"
-                                name="name"
+                                id="placa"
+                                name="placa"
                                 type="text"
                             />
                         </FormGroup>

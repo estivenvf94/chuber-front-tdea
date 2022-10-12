@@ -15,7 +15,9 @@ export default function Home() {
         <LayoutGeneric>
             <div className="layout-side">
                 <header className="layout-side-header">
-                    header
+                    <div className="layout-side-header-logo">
+                        Chuber
+                    </div>
                 </header>
                 {loginForm && (
                     <LoginForm

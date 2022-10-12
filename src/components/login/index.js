@@ -1,3 +1,4 @@
+// @vendors
 import React from "react";
 import { Form, Button, FormGroup, Input, Label } from "reactstrap";
 
@@ -46,5 +47,6 @@ export default function LoginForm({ setLoginForm }) {
                 </FormGroup>
             </Form>
         </div>
+
     )
 }
