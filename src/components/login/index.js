@@ -1,13 +1,11 @@
 // @vendors
-import React from "react";
-import { Form, Button, FormGroup, Input, Label } from "reactstrap";
+import React, { useState } from "react";
+import { Form, Button, FormGroup, ButtonGroup, Input, Label } from "reactstrap";
 
 export default function LoginForm({ setLoginForm }) {
+    const [rSelected, setRSelected] = useState(1);
     return (
         <div className="layout-side-form">
-            <div className="title">
-                Ingresa a tu cuenta
-            </div>
             <div className="parag">
                 ¿No tienes una cuenta?
                 <div
@@ -17,9 +15,32 @@ export default function LoginForm({ setLoginForm }) {
                     Crea una
                 </div>
             </div>
+            <div className="title">
+                Ingresa a tu cuenta
+            </div>
             <Form
                 className="form"
             >
+                <FormGroup>
+                    <ButtonGroup>
+                        <Button
+                            color="primary"
+                            outline
+                            active={rSelected === 1}
+                            onClick={() => setRSelected(1)}
+                        >
+                            Persona
+                        </Button>
+                        <Button
+                            color="primary"
+                            outline
+                            active={rSelected === 2}
+                            onClick={() => setRSelected(2)}
+                        >
+                            Conductor
+                        </Button>
+                    </ButtonGroup>
+                </FormGroup>
                 <FormGroup>
                     <Label for="email">
                         Correo electrónico
