@@ -55,22 +55,25 @@ export default function PersonForm({ showRequest, setShowRequest }) {
                             id="name"
                             type="text"
                         />
-                        {errors.name && touched.name ? (
-                            <FormFeedback className="form-alert">{errors.name}</FormFeedback>
-                        ) : null}
+                        {errors.name && touched.name
+                            ? (
+                                <FormFeedback className="form-alert">{errors.name}</FormFeedback>
+                            )
+                            : null
+                        }
                     </FormGroup>
                     <FormGroup>
                         <Label for="email">
                             Correo electrónico
                         </Label>
-                        <Field name="email" type='text' />
+                        <Field name="email" id='email' type='text' />
                         {errors.email && touched.email ? <FormFeedback className="form-alert">{errors.email}</FormFeedback> : null}
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">
                             Contraseña
                         </Label>
-                        <Field name="password" type="password" />
+                        <Field name="password" id='password' type="password" />
                         {errors.password && touched.password ? <FormFeedback className="form-alert">{errors.password}</FormFeedback> : null}
                     </FormGroup>
                     <FormGroup className="form-actions">
